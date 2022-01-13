@@ -21,6 +21,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('register', 'UserController@register');
     Route::post('register-client', 'UserController@registerClient');
     Route::get('users', 'UserController@index');
+    Route::get('users/{user}', 'UserController@show');
     Route::get('artists', 'UserController@indexartist');
     Route::get('artist/{artist}', 'ArtistController@show');
     Route::delete('users/{user}', 'UserController@delete');
@@ -54,7 +55,6 @@ Route::group(['middleware' => ['cors']], function () {
 
 
         Route::put('users/{user}', 'UserController@update');
-        Route::get('users/{user}', 'UserController@show');
 
 
         //Rutas audio/video formats
