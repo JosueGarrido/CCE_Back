@@ -24,6 +24,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('artists', 'UserController@indexartist');
     Route::get('artist/{artist}', 'ArtistController@show');
     Route::delete('users/{user}', 'UserController@delete');
+    Route::post('users', 'UserController@store');
     Route::get('users/{user}/profile_picture', 'UserController@image');
     Route::get('products/{product}/image', 'ProductController@image');
     Route::get('products', 'ProductController@indexall');
@@ -51,7 +52,7 @@ Route::group(['middleware' => ['cors']], function () {
 
 
 
-        Route::post('users', 'UserController@store');
+
         Route::put('users/{user}', 'UserController@update');
         Route::get('users/{user}', 'UserController@show');
 
